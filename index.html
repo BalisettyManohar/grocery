@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart Grocery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   
+    <nav class="navbar">
+        <div class="nav-content">
+            <h1 class="logo">FreshMart</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+            </div>
+            <button class="cart-btn" onclick="toggleCart()">
+                 <span class="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        
+        <div id="productGrid" class="product-view">
+            <div class="categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="fruits">Fruits</button>
+                <button class="category-btn" data-category="vegetables">Vegetables</button>
+                <button class="category-btn" data-category="dairy">Dairy</button>
+                <button class="category-btn" data-category="bakery">Bakery</button>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+
+      
+        <div id="productDetails" class="product-details hidden">
+            <button class="back-btn" onclick="showProductGrid()">← Back to Products</button>
+            <div class="product-details-content"></div>
+        </div>
+    </main>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-btn" onclick="toggleCart()">✕</button>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    Total: $<span id="cartTotal">0.00</span>
+                </div>
+                <button class="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
